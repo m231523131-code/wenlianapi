@@ -12,8 +12,18 @@
   }
 
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-dark-950 dark:text-gray-100;
-    @apply min-h-screen;
+    @apply min-h-screen bg-[#f5f8fc] text-gray-900 dark:bg-dark-950 dark:text-gray-100;
+    background-image:
+      radial-gradient(circle at top left, rgba(47, 130, 246, 0.1), transparent 32rem),
+      radial-gradient(circle at 85% 8%, rgba(247, 173, 22, 0.12), transparent 26rem),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(241, 246, 253, 0.72));
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at top left, rgba(47, 130, 246, 0.18), transparent 30rem),
+      radial-gradient(circle at 85% 12%, rgba(247, 173, 22, 0.1), transparent 24rem),
+      linear-gradient(135deg, #020617, #07111f 55%, #0f172a);
   }
 
   /* 自定义滚动条 - 仅针对 Firefox，避免 Chrome 取消 webkit 的全局定制 */
@@ -75,9 +85,9 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+    @apply bg-gradient-to-r from-primary-500 via-primary-700 to-accent-400;
     @apply text-white shadow-md shadow-primary-500/25;
-    @apply hover:from-primary-600 hover:to-primary-700 hover:shadow-lg hover:shadow-primary-500/30;
+    @apply hover:-translate-y-0.5 hover:from-primary-600 hover:via-primary-800 hover:to-accent-500 hover:shadow-lg hover:shadow-accent-500/25;
     @apply dark:shadow-primary-500/20;
   }
 
@@ -153,9 +163,9 @@
 
   /* ============ 输入框样式 ============ */
   .input {
-    @apply w-full rounded-xl px-4 py-2.5 text-sm;
-    @apply bg-white dark:bg-dark-800;
-    @apply border border-gray-200 dark:border-dark-600;
+    @apply w-full rounded-2xl px-4 py-2.5 text-sm;
+    @apply bg-white/90 dark:bg-dark-800/80;
+    @apply border border-primary-100/70 dark:border-dark-600;
     @apply text-gray-900 dark:text-gray-100;
     @apply placeholder:text-gray-400 dark:placeholder:text-dark-400;
     @apply transition-all duration-200;
@@ -192,7 +202,7 @@
 
   /* ============ 玻璃效果 ============ */
   .glass {
-    @apply bg-white/80 backdrop-blur-xl dark:bg-dark-800/80;
+    @apply bg-white/90 backdrop-blur-xl dark:bg-dark-900/90;
   }
 
   .glass-card {
@@ -206,16 +216,16 @@
 
   /* ============ 卡片样式 ============ */
   .card {
-    @apply bg-white dark:bg-dark-800/50;
-    @apply rounded-2xl;
-    @apply border border-gray-100 dark:border-dark-700/50;
+    @apply bg-white/90 dark:bg-dark-800/60;
+    @apply rounded-[1.35rem];
+    @apply border border-white/80 dark:border-dark-700/50;
     @apply shadow-card;
     @apply transition-all duration-300;
   }
 
   .card-hover {
     @apply hover:-translate-y-0.5 hover:shadow-card-hover;
-    @apply hover:border-gray-200 dark:hover:border-dark-600;
+    @apply hover:border-primary-200 dark:hover:border-primary-800;
   }
 
   .card-glass {
@@ -519,17 +529,18 @@
   /* ============ 侧边栏 ============ */
   .sidebar {
     @apply fixed inset-y-0 left-0 z-40;
-    @apply w-64 bg-white dark:bg-dark-900;
-    @apply border-r border-gray-200 dark:border-dark-800;
+    @apply w-64 bg-[#07111f] text-slate-200;
+    @apply border-r border-white/10;
     @apply flex flex-col;
     @apply transition-transform duration-300;
+    box-shadow: 24px 0 60px rgba(15, 23, 42, 0.18);
     transition-property: width, transform;
   }
 
   .sidebar-header {
     @apply h-16 px-6;
     @apply flex items-center gap-3;
-    @apply border-b border-gray-100 dark:border-dark-800;
+    @apply border-b border-white/10;
     transition:
       padding 0.2s ease,
       gap 0.2s ease;
@@ -543,18 +554,18 @@
     @apply flex items-center gap-3 rounded-xl py-2.5;
     @apply overflow-hidden;
     @apply text-sm font-medium;
-    @apply text-gray-600 dark:text-dark-300;
+    @apply text-slate-300;
     @apply transition-all duration-200;
-    @apply hover:bg-gray-100 dark:hover:bg-dark-800;
-    @apply hover:text-gray-900 dark:hover:text-white;
+    @apply hover:bg-white/10;
+    @apply hover:text-white;
     padding-left: 1.0625rem;
     padding-right: 0.875rem;
   }
 
   .sidebar-link-active {
-    @apply bg-primary-50 dark:bg-primary-900/20;
-    @apply text-primary-600 dark:text-primary-400;
-    @apply hover:bg-primary-100 dark:hover:bg-primary-900/30;
+    @apply text-white;
+    background: linear-gradient(135deg, rgba(47, 130, 246, 0.92), rgba(247, 173, 22, 0.9));
+    box-shadow: 0 12px 30px rgba(47, 130, 246, 0.22);
   }
 
   .sidebar-section {
@@ -564,7 +575,7 @@
   .sidebar-section-title {
     @apply mb-2 px-3;
     @apply text-xs font-semibold uppercase tracking-wider;
-    @apply text-gray-400 dark:text-dark-500;
+    @apply text-slate-500;
   }
 
   /* ============ 页面头部 ============ */
