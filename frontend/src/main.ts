@@ -28,8 +28,8 @@ async function bootstrap() {
   appStore.initFromInjectedConfig()
 
   // Set document title immediately after config is loaded
-  if (appStore.siteName && appStore.siteName !== 'wenlianapi') {
-    document.title = `${appStore.siteName} - GPT API Service`
+  if (appStore.siteName) {
+    document.title = appStore.siteName
   }
 
   await initI18n()

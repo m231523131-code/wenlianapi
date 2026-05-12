@@ -1724,7 +1724,7 @@ const executeCcsImport = (row: ApiKey, clientType: CcSwitchClientType) => {
       };
     }
   })`
-  const providerName = (publicSettings.value?.site_name || 'wenlianapi').trim() || 'wenlianapi'
+  const providerName = (publicSettings.value?.site_name || '稳连API').trim() || '稳连API'
   const deeplink = buildCcSwitchImportDeeplink({
     baseUrl,
     platform,

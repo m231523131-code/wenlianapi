@@ -47,7 +47,7 @@ import UserDashboardRecentUsage from '@/components/user/dashboard/UserDashboardR
 import type { UsageLog, TrendDataPoint, ModelStat } from '@/types'
 
 const authStore = useAuthStore(); const appStore = useAppStore(); const user = computed(() => authStore.user)
-const siteName = computed(() => appStore.siteName || 'wenlianapi')
+const siteName = computed(() => appStore.siteName || '稳连API')
 const displayName = computed(() => user.value?.username || user.value?.email?.split('@')[0] || '用户')
 const stats = ref<UserStatsType | null>(null); const loading = ref(false); const loadingUsage = ref(false); const loadingCharts = ref(false)
 const trendData = ref<TrendDataPoint[]>([]); const modelStats = ref<ModelStat[]>([]); const recentUsage = ref<UsageLog[]>([])

@@ -5253,7 +5253,7 @@
                       v-model="form.payment_product_name_prefix"
                       type="text"
                       class="input"
-                      placeholder="wenlianapi"
+                      placeholder="稳连API"
                     />
                   </div>
                   <div>
@@ -5275,7 +5275,7 @@
                       class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-600 dark:border-dark-600 dark:bg-dark-800 dark:text-gray-300"
                     >
                       {{
-                        (form.payment_product_name_prefix || "wenlianapi") +
+                        (form.payment_product_name_prefix || "稳连API") +
                         " 100 " +
                         (form.payment_product_name_suffix || "CNY")
                       }}
@@ -6453,9 +6453,9 @@ const form = reactive<SettingsForm>({
   default_subscriptions: [],
   force_email_on_third_party_signup: false,
   default_user_rpm_limit: 0,
-  site_name: "wenlianapi",
+  site_name: "稳连API",
   site_logo: "",
-  site_subtitle: "Subscription to API Conversion Platform",
+  site_subtitle: "API 中转站",
   api_base_url: "",
   contact_info: "",
   doc_url: "",
